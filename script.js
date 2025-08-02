@@ -9,14 +9,24 @@ function filtrar(categoria){
   });
 }
 
-// Mostrar todos al inicio
 filtrar('todos');
 
-// Botón menú hamburguesa
 const menuBtn = document.getElementById('menu-btn');
 const menuNav = document.getElementById('menu-nav');
 
 menuBtn.addEventListener('click', () => {
   menuNav.classList.toggle('show');
 });
+
+menuBtn.addEventListener('click', () => {
+  menuNav.classList.toggle('show');
+});
+
+const menuButtons = menuNav.querySelectorAll('button');
+menuButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    menuNav.classList.remove('show'); // Oculta el menú
+  });
+});
+
 
